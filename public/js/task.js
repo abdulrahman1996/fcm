@@ -12,7 +12,7 @@ function load() {
        data:'_token = <?php echo csrf_token() ?',
 
 
-        success:function(tasks){
+            success:function(tasks){
       // alert(tasks[0].id);
 
 

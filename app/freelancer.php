@@ -12,6 +12,11 @@ class freelancer extends Model
 
     public function tasks()
     {
-    	return $this->belongToMany('App/Task' , 'freelancer_tasks');
+    	return $this->belongsToMany('App\Task' , 'freelancer_tasks');
+    }
+
+    public function skills()
+    {
+        return $this->belongsToMany('App\Skill' , 'freelancer_skills');
     }
 }

@@ -28,9 +28,9 @@ class TaskRepo
         return DB::table('offers')
             ->select('profiles.id as profile_id','consumer_users.country','freelancers.reviews','offers.timeNeeded' , 'offers.price', 'offers.timeNeeded','users.name as fl_name' ,'profiles.rate' , 'profiles.image as img' , 'consumer_users.country'  )
             ->where('offers.task_id' , '='  , $taskId)
-            ->join('freelancers' , 'freelancers.user_id'  , '=' , 'offers.freelancer_id')
-            ->join('users'  , 'users.id' , '=' , 'freelancers.user_id')
-            ->join('consumer_users'  , 'consumer_users.user_id' , '='  , 'freelancers.user_id')
+            ->join('freelancers' , 'freelancers.id'  , '=' , 'offers.freelancer_id')
+            ->join('users'  , 'users.id' , '=' , 'freelancers.id')
+            ->join('consumer_users'  , 'consumer_users.user_id' , '='  , 'freelancers.id')
             ->join('profiles'  , 'profiles.id' ,'=' ,'freelancers.profile_id')->get();
 
 

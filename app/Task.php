@@ -10,7 +10,7 @@ class Task extends Model
 
     public function skills()
     {
-        return $this->belongsToMany('App\Skill', 'task_technoloies');
+        return $this->belongsToMany('App\Skill', 'task_technoloies' );
     }
     public function employer()
     {

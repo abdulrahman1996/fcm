@@ -31,9 +31,13 @@ Route::get('/getSkills' , 'skillController@get');
 
 Route::get('/tasks', 'TaskController@show');
 Route::get('/getTasks'  , 'TaskController@all');
+Route::get('/freelancer_task_qu' , 'freelancerController@isQualifedForTask');
+Route::post('/addNewSkills' , 'freelancerController@addNewSkills');
 
 Route::get('/{username}' , 'ProfileController@show');
 Route::get('/tasks/{taskid}', 'TaskController@get')->middleware('auth');
 
 Route::post('/applyOffer' , 'OfferController@applyOffer');
 Route::post('/getRate/{profile_id}' , 'TaskController@getRate');
+
+

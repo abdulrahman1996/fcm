@@ -13,11 +13,7 @@ class ProfileController extends Controller
         $profile = new Profile();
         $profileData = $profile->showByUsername($username);
         session(['username'=>$profileData->username  , 'image'=>$profileData->image , 'email'=>$profileData->email] ,'');
-
-
           return  View('employer.em_profile' , ['profileData'=>$profileData]);
-
-
 
     }
 }

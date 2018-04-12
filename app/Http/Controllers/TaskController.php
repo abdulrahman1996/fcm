@@ -48,11 +48,10 @@ class TaskController extends Controller
     }
     public function get($id)
     {
-        $task = Task::find($id);
+            $task = Task::find($id);
         $taskRepo = new TaskRepo();
         $offersData = $taskRepo->taskOffers($id);
-        echo count($offersData);
-        return View('task.tasksOffers' , ['offersData'=>$offersData  ,  'task'=>$task]);
+        return View('task.tasksOffers' , [ 'offersData'=>$offersData  ,  'task'=>$task]);
     }
     public function all()
     {

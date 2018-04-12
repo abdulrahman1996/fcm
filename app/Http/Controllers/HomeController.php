@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 use Auth;
 
@@ -23,7 +24,7 @@ class HomeController extends Controller
         {
              $this->guard();
 
-
+            Session::put('user_id' , Auth::user()->id);
             return redirect('home');
         }
 
